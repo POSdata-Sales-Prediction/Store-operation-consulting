@@ -27,7 +27,7 @@ chromedriver_path = "../resources/chromedriver.exe"
 driver = webdriver.Chrome(os.path.join(os.getcwd(), chromedriver_path), options=options)  # chromedriver 열기
 driver.get('https://map.kakao.com/')  # 주소 가져오기
 search_area = driver.find_element_by_xpath('//*[@id="search.keyword.query"]') # 검색 창
-search_area.send_keys('강남구 치킨집')  # 검색어 입력
+search_area.send_keys('강남구 치킨')  # 검색어 입력
 driver.find_element_by_xpath('//*[@id="search.keyword.submit"]').send_keys(Keys.ENTER)  # Enter로 검색
 driver.implicitly_wait(3) # 기다려 주자
 more_page = driver.find_element_by_id("info.search.place.more")
@@ -91,4 +91,4 @@ while has_next: # 다음 페이지가 있으면 loop
         next_btn.send_keys(Keys.ENTER)
 print("크롤링종료")
 
-chicken_gangnam.to_csv('../resources/extractedData/gangnam_chicken.csv',encoding="cp949",index=False)
+chicken_gangnam.to_csv('../resources/extractedData/gangnam_chicken2.csv',encoding="utf8",index=False)

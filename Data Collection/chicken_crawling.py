@@ -23,7 +23,7 @@ options = webdriver.ChromeOptions()
 # options.add_argument("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36   ")
 options.add_argument('window-size=500x300') 
 options.add_argument('lang=ko_KR')
-chromedriver_path = "../resources/chromedriver.exe"
+chromedriver_path = "../../resources/chromedriver.exe"
 driver = webdriver.Chrome(os.path.join(os.getcwd(), chromedriver_path), options=options)  # chromedriver 열기
 driver.get('https://map.kakao.com/')  # 주소 가져오기
 search_area = driver.find_element_by_xpath('//*[@id="search.keyword.query"]') # 검색 창
@@ -91,4 +91,4 @@ while has_next: # 다음 페이지가 있으면 loop
         next_btn.send_keys(Keys.ENTER)
 print("크롤링종료")
 
-chicken_gangnam.to_csv('../resources/extractedData/gangnam_chicken2.csv',encoding="utf8",index=False)
+chicken_gangnam.to_csv('../../resources/extractedData/gangnam_chicken2.csv',encoding="utf8",index=False)
